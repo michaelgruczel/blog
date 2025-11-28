@@ -28,7 +28,7 @@ The flow is this:
 - 3 - when we query for a recipe in the MCP host chat (LM Studio), the Host will decide to call the 'search_for_recipes' tool from our MCP server and the MCP server will return an id for the best matching recipe from the vector DB.
 - 4 - after our MCP server returned the id, the MCP host will decide to call the 'search_for_recipes' tool from our MCP server and the MCP server will return the recipe from the relational DB. The MCP host will respond in the chat using the connected LLM to make a nice text out of it.
 
-You will find the full code for this example at https://github.com/michaelgruczel/mcp-cooking-recipes-server-example
+You will find the full code for this example at [Github code](https://github.com/michaelgruczel/mcp-cooking-recipes-server-example)
 
 ## concepts and tools you should know and prepare upfront
 
@@ -47,14 +47,14 @@ A vector DB uses 3 concepts:
 - Indexing - Vector indexing means storing vector embeddings in a database for efficient similarity searches.
 - Querying - Vector databases exhibit the ability to retrieve similar objects based on a query, based on pre-calculated values using a Approximate Nearest Neighbor (ANN) search for indexing and similarity computation.
 
-For our example we will use chroma db https://github.com/chroma-core/chroma.
+For our example we will use chroma db [chroma DB](https://github.com/chroma-core/chroma).
 We use the default chroma DB setting for the embedding.
 The default ChromaDB embedding function based on OnnxRuntime and MiniLM-L6-v2 model.
 The advantage of all-MiniLM-L6-v2 is that it is small (only 22MB), fast, and accurate.
 
 **Data for use case**
 
-For this example I will use data from kaggle https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions?select=RAW_recipes.csv
+For this example I will use data from kaggle [kaggle RAW_recipes.csv](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions?select=RAW_recipes.csv)
 This dataset consists of 180K+ recipes and 700K+ recipe reviews covering 18 years of user interactions and uploads on Food.com (formerly GeniusKitchen).
 Download it from the website before you start and extract the RAW_recipes.csv.
 
@@ -67,7 +67,7 @@ Additionally, we want to install packages and manage configurations.
 UV is a Python package and project manager and manages all that stuff for us in a nice way 
 and replaces tools like ool to replace pip, pip-tools, pipx, pyenv, virtualenv.
 
-Check https://github.com/astral-sh/uv for more details.
+Check [uv](https://github.com/astral-sh/uv) for more details.
 
 So take sure that you have UV installed.
 
@@ -76,7 +76,7 @@ So take sure that you have UV installed.
 LM Studio is a tool to run local LLMs like gpt-oss, Qwen3, Gemma3, 
 DeepSeek and many more on your computer, privately and for free.
 
-Download and install lmstudio from https://lmstudio.ai/.
+Download and install lmstudio from [lmstudio.ai](https://lmstudio.ai/).
 
 **Docker**
 
@@ -94,13 +94,13 @@ we should check that our Python implementation
 exposes usable MCP endpoints. 
 The MCP inspector works nicely for that, this way we can call the MCP server endpoints without the overhead of a LLM.
 
-Check https://modelcontextprotocol.io/docs/tools/inspector for more details and ensure that
+Check [mcp inspector](https://modelcontextprotocol.io/docs/tools/inspector) for more details and ensure that
 
 ```
 npx @modelcontextprotocol/inspector
 ```
 
-works. You might need to install npx, see https://docs.npmjs.com/cli/v8/commands/npx.
+works. You might need to install npx, see [npx](https://docs.npmjs.com/cli/v8/commands/npx).
 
 ## Let's get started
 
@@ -333,9 +333,9 @@ That means if you ask for a recipe:
 
 some usefull links:
 
-- Full code for this example at https://github.com/michaelgruczel/mcp-cooking-recipes-server-example
-- UV https://github.com/astral-sh/uv
-- MCP inspector https://modelcontextprotocol.io/docs/tools/inspector 
-- LM studio https://lmstudio.ai/
-- Chroma DB https://github.com/chroma-core/chroma
-- Kaggle Dataset https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions?select=RAW_recipes.csv
+- Full code for this example at [https://github.com/michaelgruczel/mcp-cooking-recipes-server-example](https://github.com/michaelgruczel/mcp-cooking-recipes-server-example)
+- UV [https://github.com/astral-sh/uv](https://github.com/astral-sh/uv)
+- MCP inspector [https://modelcontextprotocol.io/docs/tools/inspector ](https://modelcontextprotocol.io/docs/tools/inspector)
+- LM studio [https://lmstudio.ai/](https://lmstudio.ai/)
+- Chroma DB [https://github.com/chroma-core/chroma](https://github.com/chroma-core/chroma)
+- Kaggle Dataset [https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions?select=RAW_recipes.csv](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions?select=RAW_recipes.csv)
